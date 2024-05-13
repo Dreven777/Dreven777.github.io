@@ -1,0 +1,134 @@
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 2464px;
+    background-color: #F9F9F9;
+    font-family: 'Roboto';
+    color: #000000;
+    background-color: #F9F9F9;
+}
+.first-page {
+    width: 1920px;
+    height: 700px;
+    background-color: #EEEFF1;
+}
+.navigation {
+    display: flex;
+    width: 611px;
+    margin-left: 399px;
+    gap: 30px;
+    padding-top: 79px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+}
+.navigation div:hover {
+    color: #34547A;
+}
+.content {
+    margin-top: 200px;
+    text-transform: uppercase;
+    margin-left: 399px;
+    width: 540px;
+    font-weight: 400;
+    color: #727272;
+}
+.content p {
+    font-weight: 500;
+    font-size: 48px;
+    color: #000000;
+}
+.button-in-content {
+    width: 225px;
+    height: 65px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 50px;
+    background-color: #34547A;
+    border: none;
+}
+.button-in-content:hover {
+    border: solid 2px black;
+}
+.bio {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 540px;
+    margin-left: calc(50% - 270px);
+    font-weight: 400;
+    font-size: 16px;
+    color: #727272;
+    margin-bottom: 75px;
+}
+.bio p {
+    margin-top: 112px;
+    font-weight: 500;
+    font-size: 32px;
+    color: #000000;
+}
+.portfolio {
+    height: 250px;
+    width: 100%;
+    background-color: #34547A;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.item {
+    margin-top: 100px;
+    width: 141px;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+.item span {
+    font-size: 21px;
+}
+.item img {
+    float: left;
+    margin-right: 10px;
+}
+.how-we-work {
+    width: 100%;
+    height: 1004px;
+    background-color: #EEEFF1;
+    color: #727272;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 100px;
+}
+.how-we-work .header {
+    font-weight: 500;
+    color: #000000;
+    font-size: 32px;
+}
+.how-we-work-text {
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    width: 540px;
+    margin-left: calc(50% - 270px);
+}
+.how-we-work iframe {
+    margin-top: 100px;
+}
+.footer {
+    width: 100%;
+    height: 151px;
+    background-color: #34547A;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding-top: 50px;
+    padding-left: 399px;
+    
+}
+.author-name {
+    font-weight: 500;
+    font-size: 21px;
+    color: #FFFFFF;
+}
