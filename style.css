@@ -4,28 +4,38 @@
     font-weight: normal;
     font-style: normal;
 }
+@media (max-width: 700px) {
+    .navigation {
+        /* display: none; */
+    }
+}
+@media (min-width: 699px) {
+    .navigation {
+        display: flex;
+    }
+}
 body {
     margin: 0 0;
 }
 .main {
     position: relative;
-    top: 0;
-    left: 0;
-    width: 1920px;
-    height: 2464px;
+    width: 100%;
+    min-width: 375px;
+    height: auto;
     font-family: "Roboto", sans-serif;
     color: #000000;
     background-color: #F9F9F9;
+    box-sizing: border-box;
 }
 .first-page {
-    width: 1920px;
-    height: 700px;
+    width: 100%;
+    padding-bottom: 100px;
     background-color: #EEEFF1;
 }
 .navigation {
-    display: flex;
-    width: 611px;
-    margin-left: 399px;
+    width: 55%; /* 20 margin left, 75 width, 5 from right */
+    min-width: 600px;
+    margin-left: 20%;
     gap: 30px;
     padding-top: 79px;
     text-transform: uppercase;
@@ -37,10 +47,9 @@ body {
     color: #34547A;
 }
 .content {
-    margin-top: 200px;
+    margin-left: 20%;
+    width: 70%; /* 20 margin left, 70 width, 10 from right */
     text-transform: uppercase;
-    margin-left: 399px;
-    width: 540px;
     font-weight: 400;
     color: #727272;
 }
@@ -50,6 +59,7 @@ body {
     color: #000000;
 }
 .button-in-content {
+    display: block;
     width: 225px;
     height: 65px;
     font-weight: 400;
@@ -67,30 +77,33 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 540px;
-    height: 359px;
-    margin-left: calc(50% - 270px);
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+    margin-bottom: 10vh;
     font-weight: 400;
     font-size: 16px;
     color: #727272;
     box-sizing: border-box;
 }
 .bio p {
-    margin-top: 112px;
+    margin-top: 10vh;
     font-weight: 500;
     font-size: 32px;
     color: #000000;
 }
 .portfolio {
-    height: 250px;
+    height: auto;
     width: 100%;
     background-color: #34547A;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
+    padding: 10vh 10vw 10vh 10vw;
+    box-sizing: border-box;
 }
 .item {
-    margin-top: 100px;
     width: 141px;
     color: #FFFFFF;
     font-size: 16px;
@@ -104,13 +117,18 @@ body {
 }
 .how-we-work {
     width: 100%;
-    height: 1004px;
+    height: auto;
     background-color: #EEEFF1;
     color: #727272;
     text-align: center;
     font-size: 16px;
     padding-top: 100px;
+    padding-bottom: 100px;
     box-sizing: border-box;
+}
+.how-we-work iframe {
+    width: 60vw;
+    height: 25vh;
 }
 .how-we-work .header {
     font-weight: 500;
@@ -122,8 +140,8 @@ body {
     margin-bottom: 50px;
     font-weight: 400;
     font-size: 16px;
-    width: 540px;
-    margin-left: calc(50% - 270px);
+    width: 50%;
+    margin-left: 25%;
 }
 .footer {
     width: 100%;
@@ -133,7 +151,7 @@ body {
     font-size: 14px;
     color: #FFFFFF;
     padding-top: 50px;
-    padding-left: 399px;
+    padding-left: 25%;
     box-sizing: border-box;
 }
 .author-name {
