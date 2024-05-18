@@ -17,6 +17,15 @@
     .author-name {
         font-size: 16px;
     }
+    /*.navigation {
+        display: none;
+    }
+    .navigation-list-key {
+        display: block;
+    }
+    .content p {
+        margin: 0 0;
+    }*/
 }
 @media (min-width: 699px) {
     .content p {
@@ -30,6 +39,9 @@
     }
     .navigation {
         display: flex;
+    }
+    .navigation-list-key {
+        display: none;
     }
 }
 @media (min-width: 400px) {
@@ -70,7 +82,7 @@ body {
 }
 .navigation {
     width: 55%; /* 20 margin left, 75 width, 5 from right */
-    min-width: 600px;
+    /*min-width: 600px;*/
     margin-left: 20%;
     gap: 30px;
     padding-top: 79px;
@@ -81,6 +93,23 @@ body {
 }
 .navigation div:hover {
     color: #34547A;
+}
+.navigation-list {
+    display: none;
+    border: 1px solid black;
+    position: absolute;
+    background-color: #EEEFF1;
+    width: 18%;
+    margin-left: 1%;
+}
+.navigation-list-key {
+    margin-left: 5%;
+}
+.navigation-list-key button {
+    border: none;
+}
+.navigation-list-key img {
+    max-height: 50px;
 }
 .content {
     margin-left: 20%;
