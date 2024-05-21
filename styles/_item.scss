@@ -1,0 +1,14 @@
+@import 'variables.scss';
+
+.item {
+    width: 141px;
+    color: $white;
+    font-size: 16px;
+    span {
+        font-size: 21px;
+    }
+    img {
+        float: left;
+        margin-right: 10px;
+    }
+}
