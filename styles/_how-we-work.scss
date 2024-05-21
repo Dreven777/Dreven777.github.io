@@ -1,0 +1,41 @@
+@import 'variables.scss';
+
+.how-we-work {
+    width: 100%;
+    height: auto;
+    background-color: #EEEFF1;
+    color: $text_color;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    .header {
+        font-weight: 500;
+        color: $black;
+        font-size: 32px;
+    }
+    .how-we-work-text {
+        margin-top: 30px;
+        margin-bottom: 50px;
+        font-weight: 400;
+        font-size: 16px;
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    iframe {
+        @include min_400 {
+            width: 300px;
+            height: 200px;
+        }
+        @include min_600 {
+            width: 400px;
+            height: 300px;
+        }
+        @include min_1000 {
+            width: 800px;
+            height: 500px;
+        }
+    }
+}
