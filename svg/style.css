@@ -1,0 +1,52 @@
+.circle {
+    stroke-width: 5px;
+    stroke: green;
+    fill: red;
+    width: 150px;
+    animation-duration: 2s;
+    animation-name: circleAnim;
+    animation-iteration-count: infinite;
+}
+.ellipse {
+    stroke-width: 5px;
+    stroke: yellow;
+    fill: green;
+    stroke-dasharray: 1100;
+    stroke-dashoffset: 1100;
+    animation-duration: 3s;
+    animation-name: ellipseAnim;
+    animation-iteration-count: infinite;
+}
+.square {
+    stroke-width: 5px;
+    stroke: blueviolet;
+    fill: lightgreen;
+}
+.rectangle {
+    stroke-width: 5px;
+    stroke: blue;
+    fill: lightcoral;
+}
+
+@keyframes circleAnim {
+    0% {
+        stroke: green;
+        fill: red;
+    }
+  
+    100% {
+        stroke: red;
+        fill: green;
+    }
+}
+@keyframes ellipseAnim {
+    0% {
+        stroke-dasharray: 1100;
+        stroke-dashoffset: 1100;
+    }
+  
+    100% {
+        stroke-dasharray: 1100;
+        stroke-dashoffset: 0;
+    }
+}
