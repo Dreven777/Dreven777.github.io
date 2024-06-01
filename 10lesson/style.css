@@ -18,7 +18,7 @@ body {
 header {
     background-color: rgb(145, 145, 219);
     width: 100%;
-    min-height: 200px;
+    min-height: 250px;
     height: 20%;
     color: wheat;
     padding: 15px 15px;
@@ -35,8 +35,7 @@ header {
 }
 footer {
     width: 100%;
-    min-height: 100px;
-    height: 20%;
+    min-height: 260px;
     background-color: aqua;
     color: black;
     padding: 50px;
