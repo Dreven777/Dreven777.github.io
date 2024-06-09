@@ -1,0 +1,7 @@
+.custom-bg {
+    background-image: url('https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26e_Background%20Hero.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0% 50%; 
+    background-size: cover;
+}
