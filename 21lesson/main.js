@@ -10,11 +10,29 @@ console.log('#3. JavaScript homework example file')
  * lastName - будь-яке прізвище, рядок
  * age - будь-який вік, число
  */
+
+let userObj = {
+    firstName: 'Oleksandr',
+    lastName: 'Reznychenko',
+    age: 29,
+    fullName: function () {
+        return `${this.firstName} ${this.lastName}`;
+    }
+    
+}
+console.log(userObj.fullName()) // John Smith
+/*
 let userObj = {
     firstName: 'Oleksandr',
     lastName: 'Reznychenko',
     age: 29
 };
+userObj.fullName = function () {
+    return `${userObj.firstName} ${userObj.lastName}`; 
+}
+console.log(userObj.fullName()) // John Smith
+
+*/
 
 // console.log(userObj)
 
@@ -28,10 +46,6 @@ let userObj = {
  * userObj.lastName  ← 'Smith'
  * userObj.fullName() → 'John Smith'.
  */
-userObj.fullName = function () {
-    return `${userObj.firstName} ${userObj.lastName}`; 
-}
-console.log(userObj.fullName()) // John Smith
 
 /*
  * #3
