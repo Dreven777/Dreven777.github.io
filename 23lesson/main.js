@@ -41,8 +41,8 @@ console.log(counter()) // 1
  * counterFactory.increment() - збільшує значення лічильника на 1
  * counterFactory.decrement() - зменшує значення лічильника на 1
  */
-let count = 0;
-function createCounter(){
+const counterFactory = (function (){
+    let count = 0;
     return {
         decrement (){
             count--;
@@ -55,8 +55,7 @@ function createCounter(){
             return count;
         }
     }
-}
-const counterFactory = createCounter();
+})();
 
 
 /*const counterFactory = {
@@ -103,22 +102,22 @@ console.log('counterFactory', counterFactory.value()) // 201
  */
 
 function myPrint(a, b, res) {
-    return a + '^' + b + '=' + res;
+    return `${a}^${b}=${res}`; 
 }
 
 const myPow = function (a, b, cb) {
+    let result;
     if (b === 0) {
-        return 1;
-        //return cb(a,b,1);
+        result = 1;
     } else if (b > 0) {
-        let result = a * myPow(a, b - 1, cb);
-        return result;
-        //return cb(`${a}`, `${b}`, `${result}`);
+        result = a * myPow(a, b - 1);
     } else {
-        let result = 1 / myPow(a, -b, cb);
-        return result;
-        //return cb(`${a}`, `${b}`, `${result}`);
+        result = 1 / myPow(a, -b);
     }
+    if(cb){
+        return cb(a,b,result);
+    }
+    else return result;
 }
 
 console.log('myPow', myPow(3, 4, myPrint)) // 3^4=81
