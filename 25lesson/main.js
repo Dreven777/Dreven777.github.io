@@ -6,8 +6,8 @@
 */
 
 function sumArray(numbers) {
-  return numbers.reduce(function (sum, ind) {
-    return sum+ind;
+  return numbers.reduce(function (sum, item) {
+    return sum+item;
   },0);
 }
 
@@ -24,7 +24,7 @@ console.log('Сума елементів масиву:', sum) // Виведен�
 */
 
 function doubleArrayElements(numbers) {
-  return numbers.map((ind) => ind * 2);
+  return numbers.map((item) => item * 2);
 }
 
 // Використання функції
@@ -91,18 +91,18 @@ console.log(skillsManager.getAllSkills())
  */
 
 function DateCalculator(initialDate) {
-  let timestamp = Date.parse(initialDate)/1000;
-  this.addDays = function(days) {
-    timestamp += (days * 86400);
-  }
-
-  this.subtractDays = function(days) {
-    timestamp -= (days * 86400);
-  }
+  let date = new Date(initialDate);
 
   this.getResult = function() {
-    const date = new Date(timestamp*1000);
-    return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDay()}`;
+    return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+  }
+
+  this.addDays = function(days) {
+    date.setDate(date.getDate()+days);
+  }
+  
+  this.subtractDays = function(days) {
+    date.setDate(date.getDate()-days);
   }
 }
 
