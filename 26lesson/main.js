@@ -84,7 +84,7 @@ function saveUserInfo(key, value) {
 
 function getUserInfo(key) {
   if(sessionStorage.getItem(key) === null) return 'Ключ не знайдено';
-  return sessionStorage.getItem(key);
+  return `Retrieved key (${key}): ${sessionStorage.getItem(key)}`;
 }
 
 // Демонстрація використання функцій
