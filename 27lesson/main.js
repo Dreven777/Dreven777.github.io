@@ -63,13 +63,12 @@ console.log(trackMousePosition())
  */
 
 function createTestList() {
-   document.body.innerHTML += `
-     <ul id="testList">
-       <li>Item 1</li>
-       <li>Item 2</li>
-       <li>Item 3</li>
-     </ul>
-     `
+  const el = document.createElement('ul');
+  el.setAttribute("id", "testList");
+  el.innerHTML = `<li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>`;
+  document.body.appendChild(el);
 }
 createTestList();
 
