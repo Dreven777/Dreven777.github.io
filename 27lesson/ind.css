@@ -1,0 +1,168 @@
+
+body {
+
+    font-family: 'Open Sans', sans-serif;
+  
+    font-size: 12px;
+  
+  }
+  
+  .widget-filter .panel-heading{
+  
+    font-weight: 600;
+  
+    text-transform: uppercase;
+  
+    color: #6688a6;
+  
+  }
+  
+  
+  
+  .widget-filter .list-group a{
+  
+    font-weight: 500;
+  
+    color: #70a0c1;
+  
+    text-transform: capitalize;
+  
+    font-size: 13px;
+  
+    background-color: #f9fafb; /*#f9fafb*/
+  
+  }
+  
+  
+  
+  .widget-filter .ui.multiple.dropdown > .label {
+  
+     background: #e8647c;
+  
+     opacity: 1;
+  
+     color: #fff;
+  
+     padding: 6px 8px !important;
+  
+     font-weight: 500;
+  
+  }
+  
+  .widget-filter .ui.label > .close.icon, 
+  
+  .widget-filter .ui.label > .delete.icon{
+  
+    opacity: 1;
+  
+    color: #fff;
+  
+    font-weight: normal;
+  
+    font-size: 10px;
+  
+  }
+  
+  
+  
+  .widget-filter .ui.label > a:hover,
+  
+  .widget-filter .ui.label > a:focus,
+  
+  .widget-filter .ui.label > a.active
+  
+  {
+  
+    text-shadow: none;
+  
+    border: 0;
+  
+  }
+  
+  
+  
+  .widget-filter .ui.selection.dropdown .menu > .item{
+  
+    font-size: 12px;
+  
+  }
+  
+  
+  
+  .widget-filter .list-group a{
+  
+    border: 1px solid #eaecf0; /*#eaecf0*/
+  
+  }
+  
+  .widget-filter .list-group-item {
+  
+    border: 1px solid #f9fafb;
+  
+  }
+  
+  .widget-filter .btn-filter{
+  
+    background: #1a73e8;
+  
+    border: 1px solid transparent;
+  
+    box-shadow: none;
+  
+    color: #fff;
+  
+  }
+  
+  
+  
+  .widget-filter .ui.label{
+  
+    font-weight: normal;
+  
+  }
+  
+  
+  
+  .widget-filter .wrapper-price{
+  
+    margin-bottom: 10px;
+  
+    margin-left: 10px;
+  
+  }
+  
+  
+  
+  .widget-filter .slider-selection{
+  
+    background: #ff2f2f none repeat scroll 0 0;
+  
+  }
+  
+  .widget-filter .slider-handle{
+  
+    background: #fff none repeat scroll 0 0;
+  
+    border: medium none;
+  
+    border-radius: 50%;
+  
+    height: 15px;
+  
+    margin-left: 0;
+  
+    width: 15px;
+  
+    border: 4px solid #ff2f2f;
+  
+  }
+  
+  .widget-filter .slider.slider-horizontal .slider-track {
+  
+    height: 5px;
+  
+    background: #dbdbdb;
+  
+    border-radius: 0;
+  
+  }

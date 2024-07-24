@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer src="./index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="slider">
+            <div>
+                <button id="prevButton"  type="button" class="btn btn-outline-secondary prev-key" onclick="prevImage()">&#10148;</button>
+            </div>
+            <div id="image-container">
+                <div class="image-list" id="imageBox">
+                    <img src="./images/list/1.jpg" />
+                    <img src="./images/list/2.jpg" />
+                    <img src="./images/list/3.jpg" />
+                    <img src="./images/list/4.jpg" />
+                    <img src="./images/list/5.jpg" />
+                </div>
+            </div>
+            <div>
+                <button id="nextButton" type="button" class="btn btn-outline-secondary" onclick="nextImage()">&#10148;</button>
+            </div>
+        </div>
+        <div id="slideIndicator"></div>
+        <div class="pause-button"><button id="pauseButton" type="button" class="btn btn-outline-secondary" onclick="pauseSlide()"></button></div>
+    </div>
+</body>
+
+</html>
