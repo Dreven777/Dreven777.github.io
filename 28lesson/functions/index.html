@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <div class="slider">
             <div>
-                <button id="prevButton"  type="button" class="btn btn-outline-secondary prev-key" onclick="prevImage()">&#10148;</button>
+                <button id="prevButton"  type="button" class="btn btn-outline-secondary prev-key" onclick="slideImage('prev')">&#10148;</button>
             </div>
             <div id="image-container">
                 <div class="image-list" id="imageBox">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div>
-                <button id="nextButton" type="button" class="btn btn-outline-secondary" onclick="nextImage()">&#10148;</button>
+                <button id="nextButton" type="button" class="btn btn-outline-secondary" onclick="slideImage('next')">&#10148;</button>
             </div>
         </div>
         <div id="slideIndicator"></div>
