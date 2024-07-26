@@ -5,6 +5,7 @@ const nextButton = document.getElementById('nextButton');
 const prevButton = document.getElementById('prevButton');
 const pauseButton = document.getElementById('pauseButton');
 const imageBox = document.getElementById('imageBox');
+const container = document.getElementById('container');
 
 let pause = false;
 
@@ -48,9 +49,13 @@ function mouseOut(e, type = 'mouse'){
 }
 function dragStart(e, type = 'mouse'){
     clientX[0] = e.clientX;
+    if(e.type === 'touchstart') clientX[0] = e.touches[0].clientX;
+    console.log( e.touches[0].clientX);
 }
 function dragEnd(e, type = 'mouse'){
     clientX[1] = e.clientX;
+    if(e.type === 'touchend') clientX[1] = e.changedTouches[0].clientX;
+    console.log(e.changedTouches[0].clientX);
     if(clientX[1] > clientX[0] + 100) slideImage('prev');
     if(clientX[1] < clientX[0] - 100) slideImage('next');
     clientX = [];
