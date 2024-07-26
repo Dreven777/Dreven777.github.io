@@ -48,14 +48,16 @@ function mouseOut(e, type = 'mouse'){
     clientX = [];
 }
 function dragStart(e, type = 'mouse'){
-    clientX[0] = e.clientX;
-    if(e.type === 'touchstart') clientX[0] = e.touches[0].clientX;
-    console.log( e.touches[0].clientX);
+    if(e.type === 'touchstart') {
+        clientX[0] = e.touches[0].clientX;
+    }
+    else clientX[0] = e.clientX;
 }
 function dragEnd(e, type = 'mouse'){
-    clientX[1] = e.clientX;
-    if(e.type === 'touchend') clientX[1] = e.changedTouches[0].clientX;
-    console.log(e.changedTouches[0].clientX);
+    if(e.type === 'touchend') {
+        clientX[1] = e.changedTouches[0].clientX;
+    }
+    else clientX[1] = e.clientX;
     if(clientX[1] > clientX[0] + 100) slideImage('prev');
     if(clientX[1] < clientX[0] - 100) slideImage('next');
     clientX = [];
