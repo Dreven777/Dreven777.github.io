@@ -4,6 +4,8 @@ let currentImage = 0;
 const nextButton = document.getElementById('nextButton');
 const prevButton = document.getElementById('prevButton');
 const pauseButton = document.getElementById('pauseButton');
+const imageBox = document.getElementById('imageBox');
+
 let pause = false;
 
 setInterval(() => {
@@ -14,7 +16,7 @@ setInterval(() => {
 loadIndicator();
 
 
-function loadIndicator(){
+function loadIndicator() {
     if(images.length === 0) return;
     for(let i = 0; i < images.length; i++){
         const el = document.createElement('div');
@@ -22,10 +24,38 @@ function loadIndicator(){
         el.classList.add('indicator-style');
         slideIndicator.appendChild(el);
     }
-    updateKeys();
+    //updateKeys();
     updateIndicator();
     window.addEventListener('keydown', (e) => pushKey(e));
+    window.addEventListener('touchstart', (e) => dragStart(e, 'touch'));
+    window.addEventListener('touchend', (e) => dragEnd(e, 'touch'));
+    window.addEventListener('mousedown', (e) => dragStart(e));
+    window.addEventListener('mouseup', (e) => dragEnd(e));
+    imageBox.addEventListener('mouseover', (e) => mouseOver(e));
+    imageBox.addEventListener('mouseout', (e) => mouseOut(e));
 }
+let clientX = []; // [start, end]
+
+function mouseOver(e, type = 'mouse'){
+    pause = true;
+    updatePuseText();
+}
+
+function mouseOut(e, type = 'mouse'){
+    pause = false;
+    updatePuseText();
+    clientX = [];
+}
+function dragStart(e, type = 'mouse'){
+    clientX[0] = e.clientX;
+}
+function dragEnd(e, type = 'mouse'){
+    clientX[1] = e.clientX;
+    if(clientX[1] > clientX[0] + 100) nextImage();
+    if(clientX[1] < clientX[0] - 100) prevImage();
+    clientX = [];
+}
+
 function pushKey(e){
     console.log(e.keyCode);
     if(e.keyCode === 39) nextImage();
@@ -43,7 +73,7 @@ const slideImage = ()=>{
             e.style.transform = `translateX(-${currentImage*100}%)`
         }
     )
-    updateKeys();
+    //updateKeys();
     updateIndicator();
 }
 function updateIndicator(){
@@ -64,6 +94,9 @@ function updateIndicator(){
 
 function pauseSlide() {
     pause = !pause;
+    updatePuseText();
+}
+function updatePuseText(){
     if(!pause) pauseButton.textContent = 'PAUSE';
     else pauseButton.textContent = 'PLAY';
 }
@@ -79,10 +112,18 @@ function prevImage() {
         slideImage();
         
     }
+    else {
+        currentImage = images.length - 1;
+        slideImage();
+    }
 }
 function nextImage() {
     if(currentImage < (images.length - 1)){
         currentImage ++;
+        slideImage();
+    }
+    else {
+        currentImage = 0;
         slideImage();
     }
 }
