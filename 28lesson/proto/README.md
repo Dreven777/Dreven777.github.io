@@ -1,5 +1,5 @@
 # Slider on classes
-##### Home work Reznychenko Oleksandr
+###### Home work Reznychenko Oleksandr
 
 ## CONFIG
 
