@@ -4,25 +4,23 @@ import {Button} from './button.js';
 
 const container = document.getElementById('container');
 
-class Slider {
-    constructor(container, imageArray){
-        this.mainBox = container;
-        this.imageElement = [];
-        this.imageArray = imageArray;
-        this.currentImage = 0;
-        this.pauseKey = null;
-        this.pause = false;
-        this.buttons = {
-            next:   null,
-            prev: null
-        }
-    }
-    autoSlide(){
+function Slider(container, imageArray) { //
+    this.mainBox = container;
+    this.imageElement = [];
+    this.imageArray = imageArray;
+    this.currentImage = 0;
+    this.pauseKey = null;
+    this.pause = false;
+    this.buttons = {
+        next:   null,
+        prev: null
+    },
+    this.autoSlide = () => {
         if(config.autoSlide) setInterval(() => {
             if(!this.pause) this.slideImage('next')}
             , config.slideInterval);
     }
-    create(){
+    this.create = () => {
 
         this.sliderElement = document.createElement('div');
         this.sliderElement.classList.add('slider');
@@ -45,7 +43,7 @@ class Slider {
         this.loadImageList();
         this.autoSlide();
     }
-    loadImageList(){
+    this.loadImageList = () => {
         this.imageArray.forEach((element,i) => {
             this.imageElement[i] = document.createElement('img');
             this.imageElement[i].src = element;
@@ -55,7 +53,7 @@ class Slider {
             this.imageElement[i].style.left = `${i * 100}%`;
         });
     }
-    createPauseKey(){
+    this.createPauseKey = () => {
         if(!config.pauseKey) return;
         const pauseDiv = document.createElement('div');
         container.appendChild(pauseDiv);
@@ -66,15 +64,15 @@ class Slider {
         pauseDiv.appendChild(this.pauseKey)
         this.pauseKey.id = 'pauseButton';
     }
-    pauseSlide(){
+    this.pauseSlide = () => {
         this.pause = !this.pause;
         this.updatePauseText();
     }
-    updatePauseText(){
+    this.updatePauseText = () => {
         if(!this.pause) this.pauseKey.textContent = 'PAUSE';
         else this.pauseKey.textContent = 'PLAY';
     }
-    slideImage(type){
+    this.slideImage = (type) => {
         switch(type){
             case 'prev':{
                 if(this.currentImage > 0) this.currentImage --;
@@ -100,12 +98,10 @@ class Slider {
     }
 }
 
-class Indicator {
-    constructor(container, imageArray){
-        this.mainBox = container;
-        this.imageArray = imageArray;
-    }
-    create(){
+function Indicator(container, imageArray) {
+    this.mainBox = container;
+    this.imageArray = imageArray;
+    this.create = () => {
         if(config.showIndicator) {
             if(this.imageArray.length <= 0) return;
             const slideIndicator = document.createElement('div');
@@ -120,7 +116,7 @@ class Indicator {
         }
         this.updateIndicator();
     }
-    updateIndicator() {
+    this.updateIndicator = () => {
         this.imageArray.forEach((element,i) => {
             const indicator = document.getElementById(`indicator_${i}`);
             if(slider.currentImage === i){
