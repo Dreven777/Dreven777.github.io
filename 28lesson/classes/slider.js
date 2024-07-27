@@ -1,16 +1,6 @@
-const config = {
-    "slideInterval": 2000,
-    "autoSlide": true,
-    "showIndicator": true,
-    "pauseKey": true
-};
-const imageList = [
-    "./images/list/1.jpg",
-    "./images/list/2.jpg",
-    "./images/list/3.jpg",
-    "./images/list/4.jpg",
-    "./images/list/5.jpg"
-];
+import config from './config.js';
+import imageList from './imageList.js';
+import {Button} from './button.js';
 
 const container = document.getElementById('container');
 
@@ -27,18 +17,19 @@ class Slider {
             prev: null
         }
     }
+    autoSlide(){
+        if(config.autoSlide) setInterval(() => {
+            if(!this.pause) this.slideImage('next')}
+            , config.slideInterval);
+    }
     create(){
 
         this.sliderElement = document.createElement('div');
         this.sliderElement.classList.add('slider');
         container.appendChild(this.sliderElement);
 
-        this.buttons.prev = document.createElement('button');
-        this.buttons.prev.id = 'prevButton';
-        this.buttons.prev.type = 'button';
-        this.buttons.prev.classList.add('btn', 'btn-outline-secondary', 'prev-key');
-        this.buttons.prev.innerHTML  = "&#10148;"
-        this.sliderElement.appendChild(this.buttons.prev);
+        this.buttons.prev = new Button(this.sliderElement, () => this.slideImage('prev'), "&#10148;", ['btn', 'btn-outline-secondary']);
+        this.buttons.prev.classList.add('prev-key');
 
         this.imageContainer = document.createElement('div');
         this.imageContainer.id = 'image-container';
@@ -49,14 +40,10 @@ class Slider {
         this.imageBox.id = 'imageBox';
         this.imageContainer.appendChild(this.imageBox);
 
-        this.buttons.next = document.createElement('button');
-        this.buttons.next.id = 'prevButton';
-        this.buttons.next.type = 'button';
-        this.buttons.next.classList.add('btn', 'btn-outline-secondary');
-        this.buttons.next.innerHTML  = "&#10148;"
-        this.sliderElement.appendChild(this.buttons.next);
+        this.buttons.next = new Button(this.sliderElement, () => this.slideImage('next'), "&#10148;", ['btn', 'btn-outline-secondary']);
 
         this.loadImageList();
+        this.autoSlide();
     }
     loadImageList(){
         this.imageArray.forEach((element,i) => {
@@ -73,19 +60,43 @@ class Slider {
         const pauseDiv = document.createElement('div');
         container.appendChild(pauseDiv);
         pauseDiv.classList.add('pause-button');
-        this.pauseKey = document.createElement('button');
+
+
+        this.pauseKey = new Button(this.sliderElement, () => this.pauseSlide(), "PAUSE", ['btn', 'btn-outline-secondary']);
         pauseDiv.appendChild(this.pauseKey)
         this.pauseKey.id = 'pauseButton';
-        this.pauseKey.type = 'button';
-        this.pauseKey.classList.add('btn', 'btn-outline-secondary');
-        this.pauseKey.onclick = this.pauseSlide();
-        this.pauseKey.textContent = 'PAUSE';
     }
     pauseSlide(){
-
+        this.pause = !this.pause;
+        this.updatePauseText();
     }
     updatePauseText(){
-        
+        if(!this.pause) this.pauseKey.textContent = 'PAUSE';
+        else this.pauseKey.textContent = 'PLAY';
+    }
+    slideImage(type){
+        switch(type){
+            case 'prev':{
+                if(this.currentImage > 0) this.currentImage --;
+                else this.currentImage = this.imageElement.length - 1;
+                break;
+            }
+            case 'next':{
+                if(this.currentImage < (this.imageElement.length - 1)) this.currentImage ++;
+                else this.currentImage = 0;
+                break;
+            } 
+            default: {
+                console.log('error');
+                break;
+            }
+        }
+        this.imageElement.forEach(
+            (e) => {
+                e.style.transform = `translateX(-${this.currentImage*100}%)`
+            }
+        )
+        if(indicator) indicator.updateIndicator();
     }
 }
 
@@ -131,3 +142,47 @@ const indicator = new Indicator(container, imageList);
 slider.create();
 indicator.create();
 slider.createPauseKey();
+
+createListeners();
+
+function createListeners() {
+    window.addEventListener('keydown', (e) => {
+        if(e.keyCode === 39) slider.slideImage('next');
+        else if(e.keyCode === 37) slider.slideImage('prev');
+        else if(e.keyCode === 80) slider.pauseSlide();
+    });
+    window.addEventListener('touchstart', (e) => dragStart(e, 'touch'));
+    window.addEventListener('touchend', (e) => dragEnd(e, 'touch'));
+    window.addEventListener('mousedown', (e) => dragStart(e));
+    window.addEventListener('mouseup', (e) => dragEnd(e));
+    slider.imageBox.addEventListener('mouseover', (e) => mouseOver(e));
+    slider.imageBox.addEventListener('mouseout', (e) => mouseOut(e));
+}
+
+function mouseOver(e, type = 'mouse'){
+    slider.pause = true;
+    slider.updatePauseText();
+}
+
+function mouseOut(e, type = 'mouse'){
+    slider.pause = false;
+    slider.updatePauseText();
+    clientX = [];
+}
+
+let clientX = []; // [start, end]
+function dragStart(e, type = 'mouse'){
+    if(e.type === 'touchstart') {
+        clientX[0] = e.touches[0].clientX;
+    }
+    else clientX[0] = e.clientX;
+}
+function dragEnd(e, type = 'mouse'){
+    if(e.type === 'touchend') {
+        clientX[1] = e.changedTouches[0].clientX;
+    }
+    else clientX[1] = e.clientX;
+    if(clientX[1] > clientX[0] + 100) slider.slideImage('prev');
+    if(clientX[1] < clientX[0] - 100) slider.slideImage('next');
+    clientX = [];
+}
