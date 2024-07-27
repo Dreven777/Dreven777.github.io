@@ -4,7 +4,7 @@ import {Button} from './button.js';
 
 const container = document.getElementById('container');
 
-function Slider(container, imageArray) {
+function Slider(container, imageArray) { //
     this.mainBox = container;
     this.imageElement = [];
     this.imageArray = imageArray;
