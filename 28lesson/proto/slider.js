@@ -4,23 +4,26 @@ import {Button} from './button.js';
 
 const container = document.getElementById('container');
 
-function Slider(container, imageArray) { //
+function Slider(container, imagesSrcList) { //
     this.mainBox = container;
-    this.imageElement = [];
-    this.imageArray = imageArray;
+    this.imageElements = [];
+    this.imagesSrcList = imagesSrcList;
     this.currentImage = 0;
     this.pauseKey = null;
     this.pause = false;
     this.buttons = {
         next:   null,
         prev: null
-    },
-    this.autoSlide = () => {
+    }
+}
+
+const sliderPrototype = {
+    autoSlide: function () {
         if(config.autoSlide) setInterval(() => {
             if(!this.pause) this.slideImage('next')}
             , config.slideInterval);
-    }
-    this.create = () => {
+    },
+    create: function() {
 
         this.sliderElement = document.createElement('div');
         this.sliderElement.classList.add('slider');
@@ -42,45 +45,44 @@ function Slider(container, imageArray) { //
 
         this.loadImageList();
         this.autoSlide();
-    }
-    this.loadImageList = () => {
-        this.imageArray.forEach((element,i) => {
-            this.imageElement[i] = document.createElement('img');
-            this.imageElement[i].src = element;
-            this.imageElement[i].draggable = false;
-            this.imageBox.appendChild(this.imageElement[i]);
-            this.imageElement[i].style.transform = `translateX(-${this.currentImage*100}%)`
-            this.imageElement[i].style.left = `${i * 100}%`;
+    },
+    loadImageList : function () {
+        this.imagesSrcList.forEach((element,i) => {
+            this.imageElements[i] = document.createElement('img');
+            this.imageElements[i].src = element;
+            this.imageElements[i].draggable = false;
+            this.imageBox.appendChild(this.imageElements[i]);
+            this.imageElements[i].style.transform = `translateX(-${this.currentImage*100}%)`
+            this.imageElements[i].style.left = `${i * 100}%`;
         });
-    }
-    this.createPauseKey = () => {
+    },
+    createPauseKey: function () {
         if(!config.pauseKey) return;
         const pauseDiv = document.createElement('div');
         container.appendChild(pauseDiv);
         pauseDiv.classList.add('pause-button');
 
 
-        this.pauseKey = new Button(this.sliderElement, () => this.pauseSlide(), "PAUSE", ['btn', 'btn-outline-secondary']);
-        pauseDiv.appendChild(this.pauseKey)
+        this.pauseKey = new Button(pauseDiv, () => this.pauseSlide(), "PAUSE", ['btn', 'btn-outline-secondary']);
         this.pauseKey.id = 'pauseButton';
-    }
-    this.pauseSlide = () => {
+    },
+    pauseSlide: function() {
         this.pause = !this.pause;
         this.updatePauseText();
-    }
-    this.updatePauseText = () => {
+    },
+    updatePauseText: function() {
         if(!this.pause) this.pauseKey.textContent = 'PAUSE';
         else this.pauseKey.textContent = 'PLAY';
-    }
-    this.slideImage = (type) => {
+    },
+    slideImage: function(type) {
         switch(type){
             case 'prev':{
                 if(this.currentImage > 0) this.currentImage --;
-                else this.currentImage = this.imageElement.length - 1;
+                else this.currentImage = this.imageElements.length - 1;
                 break;
             }
             case 'next':{
-                if(this.currentImage < (this.imageElement.length - 1)) this.currentImage ++;
+                if(this.currentImage < (this.imageElements.length - 1)) this.currentImage ++;
                 else this.currentImage = 0;
                 break;
             } 
@@ -89,7 +91,7 @@ function Slider(container, imageArray) { //
                 break;
             }
         }
-        this.imageElement.forEach(
+        this.imageElements.forEach(
             (e) => {
                 e.style.transform = `translateX(-${this.currentImage*100}%)`
             }
@@ -98,16 +100,18 @@ function Slider(container, imageArray) { //
     }
 }
 
-function Indicator(container, imageArray) {
+Slider.prototype = sliderPrototype;
+
+function Indicator(container, imagesSrcList) {
     this.mainBox = container;
-    this.imageArray = imageArray;
+    this.imagesSrcList = imagesSrcList;
     this.create = () => {
         if(config.showIndicator) {
-            if(this.imageArray.length <= 0) return;
+            if(this.imagesSrcList.length <= 0) return;
             const slideIndicator = document.createElement('div');
             slideIndicator.id = 'slideIndicator';
             container.appendChild(slideIndicator);
-            this.imageArray.forEach((element,i) => {
+            this.imagesSrcList.forEach((element,i) => {
                 const el = document.createElement('div');
                 el.id = `indicator_${i}`;
                 el.classList.add('indicator-style');
@@ -116,8 +120,10 @@ function Indicator(container, imageArray) {
         }
         this.updateIndicator();
     }
-    this.updateIndicator = () => {
-        this.imageArray.forEach((element,i) => {
+}
+const indicatorPrototype = {
+    updateIndicator: function () {
+        this.imagesSrcList.forEach((element,i) => {
             const indicator = document.getElementById(`indicator_${i}`);
             if(slider.currentImage === i){
                 indicator.style.background = 'black';
@@ -129,7 +135,9 @@ function Indicator(container, imageArray) {
             }
         });
     }
-}
+};
+
+Indicator.prototype = indicatorPrototype;
 
 const slider = new Slider(container, imageList);
 
