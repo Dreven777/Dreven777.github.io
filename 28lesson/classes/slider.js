@@ -62,8 +62,7 @@ class Slider {
         pauseDiv.classList.add('pause-button');
 
 
-        this.pauseKey = new Button(this.sliderElement, () => this.pauseSlide(), "PAUSE", ['btn', 'btn-outline-secondary']);
-        pauseDiv.appendChild(this.pauseKey)
+        this.pauseKey = new Button(pauseDiv, () => this.pauseSlide(), "PAUSE", ['btn', 'btn-outline-secondary']);
         this.pauseKey.id = 'pauseButton';
     }
     pauseSlide(){
