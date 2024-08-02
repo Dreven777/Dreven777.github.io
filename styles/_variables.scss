@@ -1,0 +1,31 @@
+$text_color: #727272;
+$black: black;
+$white: #FFFFFF;
+
+
+@mixin max_700 {
+    @media (max-width: 700px) {
+        @content;
+    }
+}
+
+@mixin min_699 {
+    @media (min-width: 699px) {
+        @content;
+    }
+}
+@mixin min_400 {
+    @media (min-width: 400px) {
+        @content;
+    }
+}
+@mixin min_600 {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+@mixin min_1000 {
+    @media (min-width: 1000px) {
+        @content;
+    }
+}

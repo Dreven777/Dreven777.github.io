@@ -1,0 +1,22 @@
+@import 'variables.scss';
+
+.bio {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+    margin-bottom: 10vh;
+    font-weight: 400;
+    font-size: 16px;
+    color: $text_color;
+    box-sizing: border-box;
+    p {
+        margin-top: 10vh;
+        font-weight: 500;
+        font-size: 32px;
+        color: $black;
+    }
+}
