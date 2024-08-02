@@ -37,3 +37,4 @@ function weekFn(cond) {
 module.exports = {
     weekFn
 }
+

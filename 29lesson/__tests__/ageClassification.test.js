@@ -3,20 +3,38 @@
 const ageClassification = require('../src/ageClassification');
 
 test('function ageClassification', () => {
-    expect(ageClassification.ageClassification(-1)).not.toBeNull();
-    expect(ageClassification.ageClassification(0)).not.toBeNull();
-    expect(ageClassification.ageClassification(1)).not.toBeNull();
-    expect(ageClassification.ageClassification(24)).not.toBeNull();
-    expect(ageClassification.ageClassification(24.01)).not.toBeNull();
-    expect(ageClassification.ageClassification(44)).not.toBeNull();
-    expect(ageClassification.ageClassification(44.01)).not.toBeNull();
-    expect(ageClassification.ageClassification(65)).not.toBeNull();
-    expect(ageClassification.ageClassification(65.1)).not.toBeNull();
-    expect(ageClassification.ageClassification(75)).not.toBeNull();
-    expect(ageClassification.ageClassification(75.01)).not.toBeNull();
-    expect(ageClassification.ageClassification(90)).not.toBeNull();
-    expect(ageClassification.ageClassification(90.01)).not.toBeNull();
-    expect(ageClassification.ageClassification(122)).not.toBeNull();
-    expect(ageClassification.ageClassification(122.01)).not.toBeNull();
-    expect(ageClassification.ageClassification(150)).not.toBeNull();
+    expect(ageClassification.ageClassification(-1)).toBeNull();
+    expect(ageClassification.ageClassification(0)).toBe('Дитинство');
+    expect(ageClassification.ageClassification(1)).toBe('Дитинство');
+    expect(ageClassification.ageClassification(24)).toBe('Дитинство');
+    expect(ageClassification.ageClassification(24.01)).toBe('Молодість');
+    expect(ageClassification.ageClassification(44)).toBe('Молодість');
+    expect(ageClassification.ageClassification(44.01)).toBe('Зрілість');
+    expect(ageClassification.ageClassification(65)).toBe('Зрілість');
+    expect(ageClassification.ageClassification(65.1)).toBe('Старість');
+    expect(ageClassification.ageClassification(75)).toBe('Старість');
+    expect(ageClassification.ageClassification(75.01)).toBe('Довголіття');
+    expect(ageClassification.ageClassification(90)).toBe('Довголіття');
+    expect(ageClassification.ageClassification(90.01)).toBe('Рекорд');
+    expect(ageClassification.ageClassification(122)).toBe('Рекорд');
+    expect(ageClassification.ageClassification(122.01)).toBeNull();
+    expect(ageClassification.ageClassification(150)).toBeNull();
 });
+
+
+// console.log('    -1 :', ageClassification(-1)) // -1 : null
+// console.log('     0 :', ageClassification(0)) // 0 : null
+// console.log('     1 :', ageClassification(1)) // 1 : Дитинство
+// console.log('    24 :', ageClassification(24)) // 24 : Дитинство
+// console.log(' 24.01 :', ageClassification(24.01)) // 24.01 : Молодість
+// console.log('    44 :', ageClassification(44)) // 44 : Молодість
+// console.log(' 44.01 :', ageClassification(44.01)) // 44.01 : Зрілість
+// console.log('    65 :', ageClassification(65)) // 65 : Зрілість
+// console.log('  65.1 :', ageClassification(65.1)) // 65.1 : Старість
+// console.log('    75 :', ageClassification(75)) // 75 : Старість
+// console.log(' 75.01 :', ageClassification(75.01)) // 75.01 : Довголіття
+// console.log('    90 :', ageClassification(90)) // 90 : Довголіття
+// console.log(' 90.01 :', ageClassification(90.01)) // 90.01 : Рекорд
+// console.log('   122 :', ageClassification(122)) // 122 : Рекорд
+// console.log('122.01 :', ageClassification(122.01)) // 122.01 : null
+// console.log('   150 :', ageClassification(150)) // 150 : null
