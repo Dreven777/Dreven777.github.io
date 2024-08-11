@@ -1,0 +1,62 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+.static-image {
+    position: fixed;
+    right: 0;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    background-color: #07161d;
+}
+.input-box {
+    width: 40%;
+    text-align: center;
+    padding-top: 1%;
+    font-size: 14px;
+    color: white;
+    margin-left: 15%;
+}
+.input-box input {
+    width: 80%;
+    height: 30px;
+    padding: 20px;
+    background: grey;
+    color: white;
+    border-radius: 50px; 
+    border: 5px solid transparent;
+    background: linear-gradient(45deg,rgb(80, 43, 80),rgb(151, 130, 91)) border-box;
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    transition: all ease .5s;
+}
+.input-box input::placeholder {
+    color: grey;
+    font-size: 18px;
+}
+.input-box input:focus {
+    outline: none;
+    scale: 1.1;
+}
+
+.search-result {
+    width: 50%;
+    height: 600px;
+    background-color: red;
+    margin-left: 10%;
+    margin-top: 2%;
+    text-align: center;
+    color: white;
+}
+@media screen and (max-width: 500px) {
+    .input-box input {
+        width: 80%;
+        height: 30px;
+        border-radius: 25px;
+        padding: 10px;
+        font-size: 14px;
+    }
+}

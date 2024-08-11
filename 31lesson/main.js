@@ -31,13 +31,14 @@ console.log('#14. JavaScript homework example file')
 async function getData(segment) {
   try {
     const response = await fetch(`https://jsonplaceholder.typicode.com${segment}`)
-      .then((response) => {
+  
         /*if(response.status < 200 || response.status > 299) return console.log(`Error: ${response.status}`);
         else return response.json();*/
-        if(response.ok) return response.json();
+        if(response.ok) {
+          const responseBody = await response.json()
+          console.log(responseBody);
+        }
         else return console.log(`Error: ${response.status}`);
-      })
-      .then(data => console.log(data));
   } catch (error) {
     console.error(error);
   }
@@ -72,7 +73,7 @@ getData(`/posts`);
 
 async function postData(segment, data) {
   try {
-    const response = await fetch(`https://jsonplaceholder.typicode.com${segment}`, {
+    fetch(`https://jsonplaceholder.typicode.com${segment}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -123,7 +124,7 @@ postData('/posts', {
 
 async function putData(id, data) {
   try {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -174,7 +175,7 @@ putData(5,{
 
 async function patchData(id, data) {
   try {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -228,7 +229,7 @@ patchData(5,{
 
 async function deleteData(id) {
   try {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
       method: 'DELETE'
     })
     .then((response) => {
