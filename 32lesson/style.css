@@ -45,11 +45,15 @@ body {
 .search-result {
     width: 50%;
     height: 600px;
-    background-color: red;
+    /*background-color: red;*/
     margin-left: 10%;
     margin-top: 2%;
     text-align: center;
     color: white;
+    overflow-y: auto;
+    overflow: scroll;
+    scrollbar-color: rgb(80, 43, 80) #07161d;
+    scrollbar-width: thin;
 }
 @media screen and (max-width: 500px) {
     .input-box input {
@@ -59,4 +63,19 @@ body {
         padding: 10px;
         font-size: 14px;
     }
+}
+
+#table_result {
+    width: 100%;
+}
+#table_result td {
+    width: 25%;
+    border: white solid 1px;
+}
+#table_result th {
+    width: 25%;
+}
+#table_result img {
+    max-width: 200px;
+    max-height: 200px;
 }
