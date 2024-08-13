@@ -70,7 +70,7 @@ body {
 }
 #table_result td {
     width: 25%;
-    border: white solid 1px;
+    border: rgb(80, 43, 80) solid 1px;
 }
 #table_result th {
     width: 25%;
