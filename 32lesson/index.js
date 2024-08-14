@@ -2,7 +2,7 @@ const APIKey = '25cecb57';
 const listItem = [];
 
 function getResult(array){
-    if(array.Search.length > 0){
+    if(array.Search?.length > 0){
         const tableID = document.getElementById('table_result');
         array.Search.forEach((element, index) => {
             console.log(element, index);
