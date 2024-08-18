@@ -1,0 +1,31 @@
+body
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    margin: 0;
+
+    -webkit-transition: 1s;
+            transition: 1s;
+
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+}
+
+.container
+{
+    width: 200px;
+    height: 100px;
+
+    -webkit-transition: all ease .5s;
+            transition: all ease .5s;
+    text-align: center;
+
+    background-color: red;
+}
+.container:hover
+{
+    background-color: yellow;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "example-project",
+  "version": "1.0.0",
+  "description": "ДЗ з gulp",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reznychenko Oleksandr",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^7.0.5",
+    "gulp-cli": "^3.0.0",
+    "gulp-csscomb": "^3.1.0",
+    "gulp-postcss": "^10.0.0",
+    "mqpacker": "^7.0.0",
+    "sass": "^1.77.8",
+    "sort-css-media-queries": "^2.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^5.1.0"
+  }
+}

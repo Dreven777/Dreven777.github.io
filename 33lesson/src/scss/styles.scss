@@ -1,0 +1,25 @@
+body
+{
+    display: flex;
+
+    margin: 0;
+
+    transition: 1s;
+
+    order: 1;
+}
+
+.container
+{
+    width: 200px;
+    height: 100px;
+
+    transition: all ease .5s;
+    text-align: center;
+
+    background-color: red;
+    &:hover
+    {
+        background-color: yellow;
+    }
+}
