@@ -62,6 +62,7 @@ class Calculator {
   add(x: number, y: number): number {
       return x + y;
   }
+  @LogMethodCalls 
   multiply(x: number, y: number): number {
     return x * y;
 }
