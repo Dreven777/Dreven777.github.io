@@ -5,7 +5,8 @@ import Button from './components/Button';
 
 function App() {
   const handleMouseEvent = (e: MouseEvent<HTMLButtonElement>) => {
-    console.log('click')
+    console.log('click');
+    console.log(e.target);
   };
 
   return (
