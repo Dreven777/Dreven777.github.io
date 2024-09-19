@@ -4,7 +4,7 @@ import List from './components/List';
 import Item from './components/Item';
 
 function App() {
-  const [id, setID] = useState(-1);
+  const [id, setID] = useState(0);
 
   function userInput(e){
     setID(e.target.value);
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <input type="number" min="1" max="100" onChange={userInput}/>
-      {id === -1 ? <List/> : <Item id={id}/>}
+      {!id ? <List/> : <Item id={id}/>}
     </div>
   );
 }
