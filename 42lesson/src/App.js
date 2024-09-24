@@ -1,7 +1,6 @@
 
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link, NavLink, useNavigate  } from 'react-router-dom';
-import { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, NavLink  } from 'react-router-dom';
 
 function App() {
 
