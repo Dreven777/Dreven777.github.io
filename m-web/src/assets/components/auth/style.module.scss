@@ -1,0 +1,39 @@
+.main {
+    width: 60%;
+    margin-left: 20%;
+    height: 600px;
+    background: #131313;
+}
+.item {
+    display: inline-block;
+    background: #131313;
+    color: white;
+    width: 80px;
+    height: 80px;
+    svg {
+        fill: #171717;
+        opacity: 1;
+    }
+    .filter {
+        fill: #009951;
+        filter: drop-shadow( 0px 0px 12px #009951);
+        opacity: 0.7;
+    }
+    .filterremove {
+        animation: 1s remove;
+    }
+}
+@keyframes remove {
+    0% {
+        transition: all .2s;
+        fill: #009951;
+        filter: drop-shadow( 0px 0px 12px #009951);
+        opacity: 0.7;
+    }
+    100% {
+        transition: all .2s;
+        fill: #171717;
+        filter: none;
+        opacity: 1;
+    }
+}

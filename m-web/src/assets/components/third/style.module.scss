@@ -1,0 +1,212 @@
+@import './../../styles/vars.scss';
+
+.Third {
+    position: relative;
+    // background: url('./../../images/bg.png');
+    color: $white-text;
+    box-shadow: 0px -5px 45px 56px #131313 ;
+    overflow-x: hidden;
+    padding-top: 15px;
+    .content {
+        .arrow_box {
+            width: 100%;
+            text-align: center;
+            height: 150px;
+            @include _942 {
+                opacity: 0;
+            }
+            @include _768 {
+                opacity: 0;
+            }
+            @include _500 {
+                opacity: 0;
+            }
+            @include _393 {
+                opacity: 0;
+            }
+            @include _320 {
+                opacity: 0;
+            }
+        }
+        img {
+            border-radius: 24px;
+        }
+        h1 {
+            text-align: left;
+            padding-top: 50px;
+            font-family: 'Ubuntu';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px; /* 125% */
+            height: 10px;
+        }
+        h2 {
+            font-family: Ubuntu;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px; /* 125% */
+            padding: 0 20px 0 20px;
+        }
+        .content_part_1{
+            img {
+                float: left;
+                margin-right: 25px;
+            }
+            @include _942 {
+                text-align: center;
+                h1{
+                    text-align: center;
+                }
+                img {
+                    margin: 0;
+                    float: none;
+                }
+            }
+            @include _768 {
+                text-align: center;
+                h1{
+                    text-align: center;
+                }
+                img {
+                    margin: 0;
+                    float: none;
+                }
+            }
+            @include _500 {
+                text-align: center;
+                h1{
+                    text-align: center;
+                }
+                img {
+                    margin: 0;
+                    float: none;
+                }
+            }
+            @include _393 {
+                text-align: center;
+                h1{
+                    text-align: center;
+                }
+                img {
+                    margin: 0;
+                    float: none;
+                }
+            }
+            @include _320 {
+                text-align: center;
+                h1{
+                    text-align: center;
+                }
+                img {
+                    margin: 0;
+                    float: none;
+                }
+            }
+        }
+        .content_part_2{
+            text-align: right;
+            h1 {
+                text-align: right;
+            }
+            img {
+                float: right;
+                margin-right: 25px;
+            }
+            @include _1920 {
+                margin-right: 210px;
+            }
+            @include _1440 {
+                margin-right: 100px;
+            }
+            @include _1320 {
+                margin-right: 100px;
+            }
+            @include _1180 {
+                margin-right: 60px;
+            }
+            @include _1024 {
+                margin-right: 40px;
+            }
+            @include _942 {
+                text-align: center;
+                h1{
+                    text-align: center;
+                }
+                img {
+                    float: none;
+                    margin: 0 0;
+                }
+            }
+            @include _768 {
+                text-align: center;
+                h1{
+                    text-align: center;
+                }
+                img {
+                    float: none;
+                    margin: 0 0;
+                }
+            }
+            @include _500 {
+                text-align: center;
+                h1{
+                    text-align: center;
+                }
+                img {
+                    float: none;
+                    margin: 0 0;
+                }
+            }
+            @include _393 {
+                text-align: center;
+                h1{
+                    text-align: center;
+                }
+                img {
+                    float: none;
+                    margin: 0 0;
+                }
+            }
+            @include _320 {
+                text-align: center;
+                h1{
+                    text-align: center;
+                }
+                img {
+                    float: none;
+                    margin: 0 0;
+                }
+            }
+        }
+        @include _1920 {
+            margin-left: 210px;
+        }
+        @include _1440 {
+            margin-left: 100px;
+        }
+        @include _1320 {
+            margin-left: 100px;
+        }
+        @include _1180 {
+            margin-left: 60px;
+        }
+        @include _1024 {
+            margin-left: 40px;
+        }
+        @include _942 {
+            margin-left: 40px;
+        }
+    }
+    h1 {
+        color: $white-text;
+        text-align: center;
+        font-family: 'Ubuntu';
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%; /* 36px */
+        padding: 0 20px 0 20px;
+    }
+}

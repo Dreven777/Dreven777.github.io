@@ -1,0 +1,180 @@
+@import './../../styles/vars.scss';
+
+.main {
+    position: relative;
+    // background: url('./../../images/bg.png');
+    padding: 50px 0 50px 0;
+    h1 {
+        color: $white-text;
+        text-align: center;
+        font-family: 'Ubuntu';
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%; /* 36px */
+    }
+    h2 {
+        color: $white-text;
+        text-align: center;
+        font-family: Ubuntu;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 125% */
+        padding: 0 20px 0 20px;
+    }
+    .mainPic {
+        border-radius: 32.249px;
+        margin-top: 50px;
+        @include _1920 {
+            width: 1500px;
+            height: 593px;
+            margin-left: calc(50% - 750px);
+        }
+        @include _1440 {
+            width: 1240px;
+            height: 493px;
+            margin-left: calc(50% - 620px);
+        }
+        @include _1320 {
+            width: 1140px;
+            height: 493px;
+            margin-left: calc(50% - 570px);
+        }
+        @include _1180 {
+            width: 1060px;
+            height: 493px;
+            margin-left: calc(50% - 530px);
+        }
+        @include _1024 {
+            width: 944px;
+            height: 443px;
+            margin-left: calc(50% - 472px);
+        }
+        @include _942 {
+            width: 862px;
+            height: 413px;
+            margin-left: calc(50% - 431px);
+        }
+        @include _768 {
+            width: 600px;
+            height: 400px;
+            margin-left: calc(50% - 300px);
+        }
+        @include _500 {
+            width: 459px;
+            height: 400px;
+            margin-left: calc(50% - 227px);
+        }
+        @include _393 {
+            width: 361px;
+            height: 400px;
+            margin-left: calc(50% - 180px);
+        }
+        @include _320 {
+            width: 300px;
+            height: 400px;
+            margin-left: calc(50% - 150px);
+        }
+        img {
+            width: 100%;
+        }
+    }
+    .imagelist {
+        display: flex;
+        margin-top: 15px;
+        width: 1500px;
+        margin-left: calc(50% - 750px);
+        gap: 5px;
+        overflow-x: hidden;
+        @include _1920 {
+            width: 1500px;
+            margin-left: calc(50% - 750px);
+            height: 150px;
+            width: 280px;
+        }
+        @include _1440 {
+            width: 1240px;
+            margin-left: calc(50% - 620px);
+            img {
+                height: 150px;
+                width: 202px;
+            }
+        }
+        @include _1320 {
+            width: 1140px;
+            margin-left: calc(50% - 570px);
+            margin-top: -20px;
+            img {
+                height: 133px;
+                width: 186px;
+            }
+        }
+        @include _1180 {
+            width: 1060px;
+            margin-left: calc(50% - 530px);
+            margin-top: -50px;
+            img {
+                height: 120px;
+                width: 172px;
+            }
+        }
+        @include _1024 {
+            width: 944px;
+            margin-left: calc(50% - 472px);
+            margin-top: -50px;
+            img {
+                height: 110px;
+                width: 153px;
+            }
+        }
+        @include _942 {
+            width: 862px;
+            margin-left: calc(50% - 431px);
+            margin-top: -50px;
+            img {
+                height: 100px;
+                width: 139px;
+            }
+        }
+        @include _768 {
+            width: 600px;
+            margin-left: calc(50% - 300px);
+            margin-top: -150px;
+            img {
+                height: 100px;
+                width: 139px;
+            }
+        }
+        @include _500 {
+            width: 459px;
+            margin-left: calc(50% - 227px);
+            margin-top: -200px;
+            img {
+                height: 100px;
+                width: 139px;
+            }
+        }
+        @include _393 {
+            width: 361px;
+            margin-left: calc(50% - 180px);
+            margin-top: -230px;
+            img {
+                height: 75px;
+                width: 100px;
+            }
+        }
+        @include _320 {
+            width: 300px;
+            margin-left: calc(50% - 150px);
+            margin-top: -250px;
+            img {
+                height: 50px;
+                width: 70px;
+            }
+        }
+        img {
+            max-width: 245px;
+        }
+    }
+}

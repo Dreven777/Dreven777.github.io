@@ -1,0 +1,235 @@
+@import './../../styles/vars.scss';
+
+.main {
+    position: relative;
+    // background: url('./../../images/bg.png');
+    box-shadow: 0px -5px 45px 56px #131313 ;
+    padding-top: 15px;
+    .footerbox {
+        display: grid;
+        grid-template-columns: [row1] 20% [row2] 20% [last] 60%;
+        @include _1920 {
+            width: calc(100% - 420px);
+            margin-left: calc(50% - 750px);
+            margin-left: 210px;
+        }
+        @include _1440 {
+            width: calc(100% - 200px);
+            margin-left: calc(50% - 620px);
+            margin-left: 100px;
+        }
+        @include _1320 {
+            width: calc(100% - 200px);
+            margin-left: calc(50% - 570px);
+            margin-left: 100px;
+        }
+        @include _1180 {
+            width: calc(100% - 120px);
+            margin-left: calc(50% - 530px);
+            margin-left: 60px;
+        }
+        @include _1024 {
+            width: calc(100% - 80px);
+            margin-left: calc(50% - 472px);
+            margin-left: 40px;
+        }
+        @include _942 {
+            width: calc(100% - 80px);
+            margin-left: calc(50% - 431px);
+            margin-left: 40px;
+        }
+        @include _768 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @include _500 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @include _393 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @include _320 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .navigation {
+            height: 50px;
+            margin-top: 50px;
+            margin-bottom: 200px;
+            .header {
+                color: $white-text;
+                font-family: Ubuntu;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 20px; /* 125% */
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+            .navigation_part {
+                cursor: pointer;
+                color: grey;
+                font-family: Ubuntu;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 25px; /* 125% */
+                &:hover {
+                    color: $white-text;
+                }
+                @include _768 {
+                    border-radius: 24px;
+                    background: #111111;
+                    max-width: 200px;
+                    margin-left: calc(50% - 100px);
+                    margin-top: 5px;
+                }
+                @include _500 {
+                    border-radius: 24px;
+                    background: #111111;
+                    max-width: 200px;
+                    margin-left: calc(50% - 100px);
+                    margin-top: 5px;
+                }
+                @include _393 {
+                    border-radius: 24px;
+                    background: #111111;
+                    max-width: 200px;
+                    margin-left: calc(50% - 100px);
+                    margin-top: 5px;
+                }
+                @include _320 {
+                    border-radius: 24px;
+                    background: #111111;
+                    max-width: 200px;
+                    margin-left: calc(50% - 100px);
+                    margin-top: 5px;
+                }
+            }
+            @include _768 {
+                width: 50%;
+                text-align: center;
+            }
+            @include _500 {
+                width: 50%;
+                text-align: center;
+            }
+            @include _393 {
+                width: 50%;
+                text-align: center;
+            }
+            @include _320 {
+                width: 50%;
+                text-align: center;
+            }
+        }
+        .info {
+            text-align: right;
+            h1 {
+                color: $white-text;
+                font-family: 'Ubuntu';
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 6px; /* 100% */
+                height: 50px;
+                img {
+                    margin-bottom: -10px;
+                }
+            }
+            h2 {
+                color: grey;
+                text-align: right;
+                font-family: 'Ubuntu';
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px; /* 125% */
+                padding: 0 20px 0 20px;
+                @include _393 {
+                    font-size: 14px;
+                }
+                @include _320 {
+                    font-size: 12px;
+                }
+            }
+            h3 {
+                color: grey;
+                font-family: 'Ubuntu';
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px; /* 125% */
+                img {
+                    margin-bottom: -10px;
+                    margin-left: 20px;
+                }
+            }
+            @include _768 {
+                width: 100%;
+                text-align: center;
+                h1 {
+                    text-align: center;
+                }
+                h2 {
+                    text-align: center;
+                }
+                h3 {
+                    text-align: center;
+                }
+            }
+            @include _500 {
+                width: 100%;
+                text-align: center;
+                h1 {
+                    text-align: center;
+                }
+                h2 {
+                    text-align: center;
+                }
+                h3 {
+                    text-align: center;
+                }
+            }
+            @include _393 {
+                width: 100%;
+                text-align: center;
+                h1 {
+                    text-align: center;
+                }
+                h2 {
+                    text-align: center;
+                }
+                h3 {
+                    text-align: center;
+                }
+            }
+            @include _320 {
+                width: 100%;
+                text-align: center;
+                h1 {
+                    text-align: center;
+                }
+                h2 {
+                    text-align: center;
+                }
+                h3 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .bottom_text {
+        width: 100%;
+        color: grey;
+        font-family: 'Ubuntu';
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 10px; /* 100% */
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}

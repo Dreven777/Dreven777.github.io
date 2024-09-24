@@ -1,0 +1,49 @@
+@import './../../styles/vars.scss';
+
+.primary {
+    cursor: pointer;
+    display: inline-flex;
+    border-radius: 24px;
+    background: $green;
+    color: $white-text;
+    padding: 12px 20px;
+    justify-content: center;
+    font-weight: 500;
+    align-items: center;
+    border: none;
+    
+    font-family: 'Inter Medium';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 125% */
+
+    &:hover {
+        box-shadow: 0px 0px 20px 0px rgba(0, 153, 81, 0.60);
+    }
+    transition: all ease-in-out .2s;
+}
+
+.secondary {
+    cursor: pointer;
+    display: inline-flex;
+    border-radius: 24px;
+    border: 1px solid $green;
+    background: rgba(35, 35, 35, 0.20);
+    color: $white-text;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    font-family: 'Lufga';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+    &:hover {
+        /* green light */
+        box-shadow: 0px 0px 20px 0px rgba(0, 153, 81, 0.60);
+    }
+    svg {
+        margin-right: 8px;
+    }
+    transition: all ease-in-out .2s;
+}

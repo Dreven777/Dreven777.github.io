@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "electron": "^32.1.2"
   }
 }

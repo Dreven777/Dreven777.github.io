@@ -1,0 +1,405 @@
+@import './../../styles/vars.scss';
+
+.second {
+    position: relative;
+    // background: url('./../../images/bg.png');
+    color: $white-text;
+    box-shadow: 0px -5px 45px 56px #131313 ;
+    overflow-x: hidden;
+    h1 {
+        font-family: 'Ubuntu Medium';
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%; /* 36px */
+        @include _1920 {
+            margin-left: 210px;
+        }
+        @include _1440 {
+            margin-left: 100px;
+        }
+        @include _1440 {
+            margin-left: 100px;
+        }
+        @include _1320 {
+            margin-left: 100px;
+        }
+        @include _1180 {
+            margin-left: 60px;
+        }
+        @include _1024 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+        @include _942 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+        @include _768 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+        @include _500 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+        @include _393 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+        @include _320 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+    }
+    h2 {
+        font-family: 'Ubuntu Light';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px; /* 120% */
+        width: 100%;
+        text-align: left;
+        @include _1920 {
+            margin-left: 210px;
+        }
+        @include _1440 {
+            margin-left: 100px;
+        }
+        @include _1440 {
+            margin-left: 100px;
+        }
+        @include _1320 {
+            margin-left: 100px;
+        }
+        @include _1180 {
+            margin-left: 60px;
+        }
+        @include _1024 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+        @include _942 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+        @include _768 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+        @include _500 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+        @include _393 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+        @include _320 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0;
+        }
+    }
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        .content_left {
+            display: block;
+            width: 750px;
+            margin-top: 50px;
+            gap: 32px;
+            @include _1920 {
+                margin-left: 210px;
+            }
+            @include _1440 {
+                width: 650px;
+                margin-left: 100px;
+            }
+            @include _1320 {
+                width: 600px;
+                margin-left: 100px;
+            }
+            @include _1180 {
+                width: 500px;
+                margin-left: 60px;
+            }
+            @include _1024 {
+                margin-left: calc(50% - 270px);
+            }
+            @include _942 {
+                margin-left: calc(50% - 270px);
+            }
+            @include _768 {
+                margin-left: calc(50% - 270px);
+            }
+            @include _500 {
+                margin-left: calc(50% - 220px);
+            }
+            @include _393 {
+                margin-left: calc(50% - 180px);
+            }
+            @include _320 {
+                margin-left: calc(50% - 180px);
+            }
+            .content_left_steps {
+                display: grid;
+                grid-template-columns: 100px 80%;
+                text-align: left;
+                .content_left_step_number {
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    border: 2px solid $white-text;
+                    font-family: 'Ubuntu Light';
+                    font-size: 48px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 48px; /* 100% */
+                }
+                h1 {
+                    margin-left: 0;
+                    font-family: 'Ubuntu Medium';
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                    min-width: 350px;
+                    @include _1024 {
+                        text-align: left;
+                    }
+                    @include _942 {
+                        text-align: left;
+                    }
+                    @include _768 {
+                        text-align: left;
+                    }
+                    @include _500 {
+                        text-align: left;
+                    }
+                    @include _393 {
+                        text-align: left;
+                    }
+                    @include _320 {
+                        text-align: left;
+                    }
+                }
+                h2 {
+                    margin-left: 0;
+                    font-family: 'Ubuntu Light';
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 14px;
+                    @include _1024 {
+                        text-align: left;
+                    }
+                    @include _942 {
+                        text-align: left;
+                    }
+                    @include _768 {
+                        text-align: left;
+                    }
+                    @include _500 {
+                        text-align: left;
+                    }
+                    @include _393 {
+                        text-align: left;
+                    }
+                    @include _320 {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        .content_right {
+            display: block;
+            margin-top: 50px;
+            @include _1920 {
+                margin-right: 210px;
+            }
+            @include _1440 {
+                margin-right: 100px;
+            }
+            @include _1320 {
+                margin-right: 100px;
+            }
+            @include _1180 {
+                margin-right: 60px;
+            }
+            @include _1024 {
+                width: 540px;
+                margin-left: calc(50% - 360px);
+            }
+            @include _942 {
+                margin-left: calc(50% - 360px);
+            }
+            @include _768 {
+                margin-left: calc(50% - 300px);
+            }
+            @include _500 {
+                margin-left: calc(50% - 229px);
+            }
+            @include _393 {
+                margin-left: calc(50% - 181px);
+            }
+            @include _320 {
+                margin-left: calc(50% - 150px);
+            }
+            .content_right_main {
+                width: 728.785px;
+                height: 485.857px;
+                border-radius: 38px;
+                background: #232323;
+                @include _1920 {
+                    width: 750px;
+                    height: 400px;
+                    border-radius: 32px;
+                }
+                @include _1440 {
+                    width: 600px;
+                    height: 400px;
+                    border-radius: 32px;
+                }
+                @include _1320 {
+                    width: 540px;
+                    height: 326px;
+                    border-radius: 32px;
+                }
+                @include _1180 {
+                    width: 540px;
+                    height: 326px;
+                    border-radius: 32px;
+                }
+                @include _1024 {
+                    width: 720px;
+                    height: 400px;
+                    border-radius: 32px;
+                }
+                @include _942 {
+                    width: 720px;
+                    height: 400px;
+                    border-radius: 32px;
+                }
+                @include _768 {
+                    width: 600px;
+                    height: 400px;
+                    border-radius: 32px;
+                }
+                @include _500 {
+                    width: 459px;
+                    height: 400px;
+                    border-radius: 32px;
+                }
+                @include _393 {
+                    width: 361px;
+                    height: 361px;
+                    border-radius: 32px;
+                }
+                @include _320 {
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 32px;
+                }
+            }
+            .content_right_bottom {
+                display: flex;
+                width: 700px;
+                height: 200px;
+                gap: 13px;
+                @include _1920 {
+                    width: 750px;
+                    gap: 10px;
+                }
+                @include _1440 {
+                    width: 600px;
+                    gap: 10px;
+                }
+                @include _1320 {
+                    width: 540px;
+                    gap: 10px;
+                }
+                @include _1180 {
+                    width: 540px;
+                    gap: 10px;
+                }
+                @include _1024 {
+                    width: 750px;
+                    gap: 10px;
+                }
+                @include _942 {
+                    width: 750px;
+                    gap: 10px;
+                }
+                @include _768 {
+                    width: 600px;
+                    border-radius: 26px;
+                }
+                @include _500 {
+                    width: 459px;
+                }
+                @include _393 {
+                    width: 361px;
+                }
+                @include _320 {
+                    width: 300px;
+                }
+                .content_right_bottom_video{
+                    width: 234px;
+                    height: 157px;
+                    border-radius: 29px;
+                    background: #232323;
+                    margin-top: 10px;
+                    @include _1920 {
+                        width: 250px;
+                        height: 222px;
+                        border-radius: 24px;
+                    }
+                    @include _1440 {
+                        width: 192px;
+                        height: 150px;
+                        border-radius: 24px;
+                    }
+                    @include _1320 {
+                        width: 172px;
+                        height: 120px;
+                        border-radius: 26px;
+                    }
+                    @include _1180 {
+                        width: 182px;
+                        height: 120px;
+                        border-radius: 26px;
+                    }
+                    @include _768 {
+                        width: 235px;
+                        height: 180px;
+                        border-radius: 26px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.vl {
+    border-left: 2px solid #D9D9D9;
+    height: 80px;
+    margin: 10px 0px 20px 40px;
+  }
