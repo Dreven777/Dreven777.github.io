@@ -1,7 +1,8 @@
-import React, { createContext, useContext } from 'react';
+import React from 'react';
 import './App.css';
 
-const UserInfo = createContext({});
+import UserInfo from './components/Context';
+import UserPage from './components/UserPage'
 
 function App() {
   return (
@@ -15,28 +16,6 @@ function App() {
         <UserPage/>
       </UserInfo.Provider>
 
-    </div>
-  );
-}
-
-function UserPage() {
-  const UserData = useContext(UserInfo);
-    return (
-    <div>
-        ID: {UserData.id}<br/>
-        Name: {UserData.name}<br/>
-        Theme: {UserData.theme}
-        <UserLogout/>
-    </div>
-  );
-}
-
-function UserLogout() {
-  const UserData = useContext(UserInfo);
-  const handleClick = () => console.log('logout');
-    return (
-    <div>
-        {UserData.login && <button onClick={handleClick}>Logout</button>}
     </div>
   );
 }
